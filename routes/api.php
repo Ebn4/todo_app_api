@@ -12,6 +12,11 @@ Route::get('/user', function (Request $request) {
 
 
 
-Route::apiResource('tasks', 'App\Http\Controllers\TaskController');
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
+
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::apiResource('tasks', 'App\Http\Controllers\TaskController');
+    Route::post('/logout',[AuthController::class,'logout']);
+});
