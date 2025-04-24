@@ -6,6 +6,7 @@ use App\Models\Task;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,10 +16,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Task::factory(50)->create();
+        User::factory(50)->create();
 
-        // Task::factory()->create([
-        //     'title' => 'Apprendre le java',
-        //     'description' => 'I have to java python for my new job',
+        // User::factory()->create([
+            // 'name' => "test",
+            // 'email' => "test@gmail.com",
+            // 'password' => Hash::make("password"),
         // ]);
     }
 }

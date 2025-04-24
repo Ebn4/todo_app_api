@@ -20,6 +20,9 @@ class TaskFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
+            'user_id' => function () {
+                return \App\Models\User::factory()->create()->id;
+            },
             'created_at' => now(),
             'updated_at' => now(),
         ];
