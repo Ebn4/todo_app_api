@@ -74,6 +74,6 @@ class TaskController extends Controller
             return response()->json(['message' => 'Tâche non trouvé'], 404);
         }
         $task->delete();
-        return response()->json(['message' => 'Tâche supprimé avec succès'], 200);
+        return response()->json(['message' => 'Tache supprime avec succes'], 200);
     }
 }
